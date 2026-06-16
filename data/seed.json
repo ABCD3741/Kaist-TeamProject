@@ -1,0 +1,56 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "급식",
+      "sort_order": 1,
+      "created_at": "2026-06-16 10:00:00"
+    },
+    {
+      "id": 2,
+      "name": "시설",
+      "sort_order": 2,
+      "created_at": "2026-06-16 10:00:00"
+    },
+    {
+      "id": 3,
+      "name": "수업",
+      "sort_order": 3,
+      "created_at": "2026-06-16 10:00:00"
+    },
+    {
+      "id": 4,
+      "name": "생활",
+      "sort_order": 4,
+      "created_at": "2026-06-16 10:00:00"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": 1,
+      "title": "급식 줄이 너무 길어요",
+      "content": "점심시간에 줄이 길어서 밥 먹을 시간이 부족합니다. 배식 동선을 나누거나 학년별 시간을 조금 조정하면 좋겠습니다.",
+      "category_id": 1,
+      "writer_name": "홍길동",
+      "status": "접수",
+      "created_at": "2026-06-16 10:00:00"
+    },
+    {
+      "id": 2,
+      "title": "체육관 조명이 어두워요",
+      "content": "방과 후 활동 시간에 체육관 일부 구역이 어두워서 공이 잘 보이지 않습니다.",
+      "category_id": 2,
+      "writer_name": "김학생",
+      "status": "검토중",
+      "created_at": "2026-06-16 11:20:00"
+    }
+  ],
+  "likes": [
+    {
+      "id": 1,
+      "suggestion_id": 1,
+      "user_name": "박학생",
+      "created_at": "2026-06-16 12:00:00"
+    }
+  ]
+}

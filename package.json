@@ -1,0 +1,20 @@
+{
+  "name": "school-suggestion-box",
+  "version": "1.0.0",
+  "description": "학교생활 건의함 서비스",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "suggestions",
+    "school",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

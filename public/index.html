@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학교생활 건의함</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="학교생활 건의함">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Student Voice</p>
+            <h1>학교생활 건의함</h1>
+          </div>
+          <button class="primary-button" id="newSuggestionButton" type="button">
+            <i data-lucide="plus" aria-hidden="true"></i>
+            건의 작성
+          </button>
+        </header>
+
+        <section class="toolbar" aria-label="건의사항 필터">
+          <label class="field compact">
+            <span>카테고리</span>
+            <select id="categoryFilter"></select>
+          </label>
+          <div class="segmented-control" aria-label="정렬">
+            <button class="segment active" data-sort="latest" type="button">최신순</button>
+            <button class="segment" data-sort="likes" type="button">공감순</button>
+          </div>
+          <button class="icon-button" id="refreshButton" type="button" title="새로고침" aria-label="새로고침">
+            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+          </button>
+        </section>
+
+        <section class="content-grid">
+          <section class="suggestion-list-panel" aria-label="건의사항 목록">
+            <div class="panel-heading">
+              <h2>건의사항</h2>
+              <span id="totalCount">0건</span>
+            </div>
+            <div class="state-message" id="stateMessage" hidden></div>
+            <ul class="suggestion-list" id="suggestionList"></ul>
+          </section>
+
+          <aside class="detail-panel" aria-label="건의사항 상세">
+            <div id="emptyDetail" class="empty-detail">
+              <i data-lucide="inbox" aria-hidden="true"></i>
+              <p>건의사항을 선택하면 상세 내용이 표시됩니다.</p>
+            </div>
+
+            <article id="detailView" hidden>
+              <div class="detail-meta">
+                <span class="badge" id="detailCategory"></span>
+                <select id="statusSelect" aria-label="처리 상태">
+                  <option value="접수">접수</option>
+                  <option value="검토중">검토중</option>
+                  <option value="처리완료">처리완료</option>
+                </select>
+              </div>
+              <h2 id="detailTitle"></h2>
+              <p class="detail-content" id="detailContent"></p>
+              <dl class="detail-info">
+                <div>
+                  <dt>작성자</dt>
+                  <dd id="detailWriter"></dd>
+                </div>
+                <div>
+                  <dt>작성일</dt>
+                  <dd id="detailCreatedAt"></dd>
+                </div>
+                <div>
+                  <dt>공감</dt>
+                  <dd id="detailLikeCount"></dd>
+                </div>
+              </dl>
+              <div class="inline-form">
+                <input id="likeUserName" type="text" placeholder="이름">
+                <button class="secondary-button" id="likeButton" type="button">
+                  <i data-lucide="thumbs-up" aria-hidden="true"></i>
+                  공감
+                </button>
+              </div>
+              <p class="feedback-message" id="detailMessage" hidden></p>
+              <div class="detail-actions">
+                <button class="secondary-button" id="editButton" type="button">
+                  <i data-lucide="pencil" aria-hidden="true"></i>
+                  수정
+                </button>
+                <button class="danger-button" id="deleteButton" type="button">
+                  <i data-lucide="trash-2" aria-hidden="true"></i>
+                  삭제
+                </button>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="suggestionDialog">
+      <form id="suggestionForm" method="dialog">
+        <div class="dialog-header">
+          <h2 id="dialogTitle">건의 작성</h2>
+          <button class="icon-button" id="closeDialogButton" type="button" title="닫기" aria-label="닫기">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <input id="suggestionId" type="hidden">
+        <label class="field">
+          <span>제목</span>
+          <input id="titleInput" type="text" maxlength="80" required>
+        </label>
+        <label class="field">
+          <span>카테고리</span>
+          <select id="categoryInput" required></select>
+        </label>
+        <label class="field">
+          <span>작성자</span>
+          <input id="writerInput" type="text" maxlength="20" required>
+        </label>
+        <label class="field" id="passwordField">
+          <span id="passwordLabel">비밀번호</span>
+          <input id="passwordInput" type="password" minlength="4" autocomplete="new-password" required>
+        </label>
+        <label class="field">
+          <span>내용</span>
+          <textarea id="contentInput" rows="7" required></textarea>
+        </label>
+        <p class="form-error" id="formError" hidden></p>
+        <div class="dialog-actions">
+          <button class="ghost-button" id="cancelDialogButton" type="button">취소</button>
+          <button class="primary-button" type="submit">저장</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
