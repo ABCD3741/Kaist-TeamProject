@@ -33,7 +33,7 @@ npm run dev
 
 ```text
 data/
-  seed.json
+  database.json
 public/
   index.html
   styles.css
@@ -60,4 +60,7 @@ src/
 | DELETE | `/api/suggestions/:id` | 건의사항 삭제 |
 | POST | `/api/suggestions/:id/likes` | 공감 등록/취소 토글 |
 
-건의사항 등록 시 `password`를 함께 저장합니다. 수정/삭제/상태 변경 시에는 작성 때 만든 `password` 또는 관리용 `master_password` 둘 중 하나가 맞으면 됩니다. 수정 화면의 새 비밀번호 칸에 값을 입력하면 글 비밀번호가 변경됩니다. 기본 마스터 비밀번호는 `1234`이며, `MASTER_PASSWORD` 환경변수로 바꿀 수 있습니다. 기존 샘플 데이터처럼 글 비밀번호가 없는 글은 임시 글 비밀번호 `1234`로 관리할 수 있습니다.
+건의사항 등록 시 `password`를 함께 저장합니다. 수정/삭제/상태 변경 시에는 작성 때 만든 `password` 또는 관리용 `master_password` 둘 중 하나가 맞으면 됩니다. 수정 화면의 새 비밀번호 칸에 값을 입력하면 글 비밀번호가 변경됩니다. 기본 마스터 비밀번호는 `1234`이며, `MASTER_PASSWORD` 환경변수로 바꿀 수 있습니다.
+
+## 서버주소
+kaist-teamproject-production-3ffe.up.railway.app
